@@ -1,0 +1,8 @@
+/src/api/index.js
+ - add the api call ex: fetchPosts
+/src/actions/posts.js (or related file)
+  - add action getPosts that calls api function fetchPosts
+  - dispatch the return value as a payload
+/src/reducers/posts.js
+  - add to switch for each action type from /actions/posts.js
+  - ex FETCH_ALL

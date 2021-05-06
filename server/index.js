@@ -9,11 +9,12 @@ import postRoutes from './routes/posts.js';
 const app = express();
 
 // setup routes
-app.use('/posts', postRoutes); // adds /posts prefix to all routes in posts.js
 
 app.use(express.urlencoded({ limit: '40mb', extended: true }));
 app.use(express.json({ limit: '40mb', extended: true }));
-app.use(cors());
+app.use(cors()); // must come before routes
+
+app.use('/posts', postRoutes); // adds /posts prefix to all routes in posts.js
 
 // using mongo cloud atlas
 const CONNECTION_URL =
